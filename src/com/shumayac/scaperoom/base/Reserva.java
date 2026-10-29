@@ -5,11 +5,14 @@ import java.time.LocalDate;
 public abstract class Reserva {
 
     public static final double PRECIO_PERSONA = 15.0;
-    private String nombreContacto;
-    private String telefono;
-    private LocalDate fechaReserva;
-    private int numJugadores;
 
+    private String nombreContacto;
+    private String apellidoContacto;
+    private String telefono;
+    private String email;
+    private String rangoEdad;
+    private int numJugadores;
+    private LocalDate fechaReserva;
     public Reserva(String nombreContacto, String telefono, LocalDate fechaReserva, int numJugadores) {
         this.nombreContacto = nombreContacto;
         this.telefono = telefono;

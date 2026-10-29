@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="756ebd5b-b2ef-49a2-baa0-ce16b6d21a05" name="Default Changelist" comment="" />
+    <list default="true" id="756ebd5b-b2ef-49a2-baa0-ce16b6d21a05" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/LGoodDatePicker_10_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/LGoodDatePicker-10.3.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScapaRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScapaRoom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Cumpleanios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Cumpleanios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +25,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="3LL2jpz3oadxaZYLXV2fpO9fI9U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="285" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
@@ -27,6 +46,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\FX517\IdeaProjects\ScapaRoom\libs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\FX517\IdeaProjects\ScapaRoom\libs" />
+      <recent name="C:\Users\FX517\IdeaProjects\ScapaRoom" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -51,11 +74,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1793219164476</updated>
-      <workItem from="1793219168056" duration="4418000" />
+      <workItem from="1793219168056" duration="5108000" />
+      <workItem from="1793257551312" duration="8341000" />
+      <workItem from="1793289803831" duration="1377000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

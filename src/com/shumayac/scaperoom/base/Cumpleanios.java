@@ -7,7 +7,7 @@ public class Cumpleanios extends Reserva {
     private static final double PACK_DECORACION = 20.0;
 
     private String nombreCumpleaniero;
-    private int edadCumpleaniero;
+    private  tipoPack;
 
     public Cumpleanios(String nombreContacto, String telefono, LocalDate fechaReserva, int numJugadores, String nombreCumpleaniero, int edadCumpleaniero) {
         super(nombreContacto, telefono, fechaReserva, numJugadores);
