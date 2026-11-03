@@ -4,11 +4,14 @@ import com.shumayac.scaperoom.base.Cumpleanios;
 import com.shumayac.scaperoom.base.Empresa;
 import com.shumayac.scaperoom.base.GrupoAmigos;
 import com.shumayac.scaperoom.base.Reserva;
+import org.xml.sax.SAXException;
 import util.Util;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -102,7 +105,7 @@ public class ReservasControlador implements ActionListener, ListSelectionListene
             return vista.grupoAmigosRB.isSelected();
         }
         else  {
-        return vista.cumpleaniosRB.isSelected();}
+            return vista.cumpleaniosRB.isSelected();}
     }
 
     //si no añade un numero me añade un -1
@@ -136,7 +139,6 @@ public class ReservasControlador implements ActionListener, ListSelectionListene
 
 
     //listener de los botones y radio
-    /*falta botones y el xml  */
     private void addActionListener(ActionListener listener) {
         vista.cumpleaniosRB.setActionCommand("Cumpleanios"); // evita problemas con la ñ
         vista.nuevoButton.addActionListener(listener);
@@ -199,10 +201,15 @@ public class ReservasControlador implements ActionListener, ListSelectionListene
                     Util.mensajeError("La fecha de reserva no es valida");
                     break;
                 }
-               int jugadores = (Integer) vista.spinner2.getValue();
+                int jugadores = (Integer) vista.spinner2.getValue();
 
                 if (edadInvalida()) {
                     Util.mensajeError("La edad del cumpleañero debe ser un numero entero entre 1 y 100");
+                    break;
+                }
+                //comprobamos que no haya otra reserva con el mismo email en la misma fecha
+                if (modelo.existeReserva(vista.emailTxt.getText(), vista.datePicker.getDate())) {
+                    Util.mensajeError("Ya existe una reserva con ese email en esa fecha");
                     break;
                 }
 
@@ -243,13 +250,25 @@ public class ReservasControlador implements ActionListener, ListSelectionListene
                             "Elimina la reserva y crea una nueva.");
                     break;
                 }
-               int jugadoresAct = (Integer) vista.spinner2.getValue();
+                int jugadoresAct = (Integer) vista.spinner2.getValue();
 
                 if (edadInvalida()) {
-                    Util.mensajeError("La edad del cumpleañero debe ser un numero entero entre 1 y 120");
+                    Util.mensajeError("La edad del cumpleañero debe ser un numero entero entre 1 y 100");
                     break;
                 }
-
+                //modificamos la reserva seleccionada (el modelo mira de que tipo es con instanceof)
+                modelo.modificarReserva(seleccionada, vista.nombreTxt.getText(),
+                        vista.apellidoTxt.getText(), vista.telefonoTxt.getText(),
+                        vista.emailTxt.getText(), jugadoresAct,
+                        vista.comboBox1.getSelectedItem().toString(),
+                        vista.datePicker.getDate(),
+                        vista.complejidadCb.getSelectedItem().toString(),
+                        vista.siCheckBox.isSelected(),
+                        vista.nombreEquipoTxt.getText().trim(),
+                        vista.cumpleaniosRB.isSelected() ? leerEdad() : 0);
+                limpiarCampos();
+                refrescar();
+                break;
 
             case "Eliminar":
                 Reserva aEliminar = (Reserva) vista.list1.getSelectedValue();
@@ -257,8 +276,52 @@ public class ReservasControlador implements ActionListener, ListSelectionListene
                     Util.mensajeError("Selecciona una reserva de la lista");
                     break;
                 }
+                //pedimos confirmacion antes de borrar
+                int resp = Util.mensajeConfirmacion("Deseas eliminar la reserva seleccionada", "Eliminar");
+                if (resp == JOptionPane.YES_OPTION) {
+                    modelo.eliminarReserva(aEliminar);
+                    limpiarCampos();
+                    refrescar();
+                }
+                break;
 
+            case "Importar":
+                //abrimos el selector de ficheros en la ultima ruta usada
+                JFileChooser selectorFichero = Util.crearSelectorFichero(ultimaRutaExportada,
+                        "Archivos XML", "xml");
+                int opt = selectorFichero.showOpenDialog(null);
+                if (opt == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        modelo.importarXML(selectorFichero.getSelectedFile());
+                        refrescar();
+                    } catch (ParserConfigurationException | IOException | SAXException ex) {
+                        Util.mensajeError("No se pudo importar el fichero: " + ex.getMessage());
+                    } catch (RuntimeException ex) {
+                        //si el fichero tiene una fecha o un numero mal escrito
+                        Util.mensajeError("El fichero tiene un formato incorrecto");
+                    }
+                }
+                break;
 
+            case "Exportar":
+                JFileChooser selectorFichero2 = Util.crearSelectorFichero(ultimaRutaExportada,
+                        "Archivos XML", "xml");
+                int opt2 = selectorFichero2.showSaveDialog(null);
+                if (opt2 == JFileChooser.APPROVE_OPTION) {
+                    File destino = selectorFichero2.getSelectedFile();
+                    //si no ha escrito la extension se la añadimos
+                    if (!destino.getName().toLowerCase().endsWith(".xml")) {
+                        destino = new File(destino.getAbsolutePath() + ".xml");
+                    }
+                    try {
+                        modelo.exportarXML(destino);
+                        actualizarDatosConfiguracion(destino);
+                        Util.mensajeInfo("Reservas exportadas correctamente");
+                    } catch (ParserConfigurationException | TransformerException ex) {
+                        Util.mensajeError("No se pudo exportar el fichero: " + ex.getMessage());
+                    }
+                }
+                break;
 
             case "Grupo Amigos":
             case "Empresas":

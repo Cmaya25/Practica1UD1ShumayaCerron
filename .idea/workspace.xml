@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="756ebd5b-b2ef-49a2-baa0-ce16b6d21a05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jgoodies_common_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jgoodies_forms_1_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ficheroReservas.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScapaRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScapaRoom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservas.conf" beforeDir="false" afterPath="$PROJECT_DIR$/reservas.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Cumpleanios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Cumpleanios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/GrupoAmigos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/GrupoAmigos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/base/Reserva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/ReservasControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/ReservasControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/ReservasModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/ReservasModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shumayac/scaperoom/gui/Ventana.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +39,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="292" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FicherosXml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../VehiculosMVC" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -111,6 +101,7 @@
       <workItem from="1793296228466" duration="668000" />
       <workItem from="1793662908623" duration="5905000" />
       <workItem from="1793670188588" duration="4063000" />
+      <workItem from="1793690974836" duration="4613000" />
     </task>
     <servers />
   </component>
