@@ -4,63 +4,55 @@ import java.time.LocalDate;
 
 public abstract class Reserva {
 
-    public static final double PRECIO_PERSONA = 15.0;
+    //public static final int MIN_JUGADORES = 3;
+    //public static final int MAX_JUGADORES = 10;
 
-    private String nombreContacto;
-    private String apellidoContacto;
+    private String nombre;
+    private String apellido;
     private String telefono;
     private String email;
-    private String rangoEdad;
     private int numJugadores;
+    private String rangoEdad;
     private LocalDate fechaReserva;
-    public Reserva(String nombreContacto, String telefono, LocalDate fechaReserva, int numJugadores) {
-        this.nombreContacto = nombreContacto;
+    private String complejidad;
+
+    public Reserva() {
+
+    }
+
+    public Reserva(String nombre, String apellido, String telefono, String email,
+                   int numJugadores, String rangoEdad, LocalDate fechaReserva, String complejidad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.telefono = telefono;
-        this.fechaReserva = fechaReserva;
+        this.email = email;
         this.numJugadores = numJugadores;
-    }
-
-    public static double getPrecioPersona() {
-        return PRECIO_PERSONA;
-    }
-
-    public String getNombreContacto() {
-        return nombreContacto;
-    }
-
-    public void setNombreContacto(String nombreContacto) {
-        this.nombreContacto = nombreContacto;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public LocalDate getFechaReserva() {
-        return fechaReserva;
-    }
-
-    public void setFechaReserva(LocalDate fechaReserva) {
+        this.rangoEdad = rangoEdad;
         this.fechaReserva = fechaReserva;
+        this.complejidad = complejidad;
     }
 
-    public int getNumJugadores() {
-        return numJugadores;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setNumJugadores(int numJugadores) {
-        this.numJugadores = numJugadores;
-    }
+    public String getApellido() { return apellido; }
+    public void setApellido(String apellido) { this.apellido = apellido; }
 
-    @Override
-    public String toString() {
-        return "Reserva : "+ nombreContacto + " " +
-                " " + telefono +
-                " " + fechaReserva +
-                " " + numJugadores;
-    }
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public int getNumJugadores() { return numJugadores; }
+    public void setNumJugadores(int numJugadores) { this.numJugadores = numJugadores; }
+
+    public String getRangoEdad() { return rangoEdad; }
+    public void setRangoEdad(String rangoEdad) { this.rangoEdad = rangoEdad; }
+
+    public LocalDate getFechaReserva() { return fechaReserva; }
+    public void setFechaReserva(LocalDate fechaReserva) { this.fechaReserva = fechaReserva; }
+
+    public String getComplejidad() { return complejidad; }
+    public void setComplejidad(String complejidad) { this.complejidad = complejidad; }
 }

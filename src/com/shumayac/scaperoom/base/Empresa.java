@@ -2,34 +2,32 @@ package com.shumayac.scaperoom.base;
 
 import java.time.LocalDate;
 
-public class Empresa extends Reserva{
-    private String nombreEmpresa;
-    private boolean necesitaFactura;
+public class Empresa extends Reserva {
+    private boolean factura;
 
-    public Empresa(String nombreContacto, String telefono, LocalDate fechaReserva, int numJugadores, String nombreEmpresa, boolean necesitaFactura) {
-        super(nombreContacto, telefono, fechaReserva, numJugadores);
-        this.nombreEmpresa = nombreEmpresa;
-        this.necesitaFactura = necesitaFactura;
+    public Empresa() {
+        super();
     }
 
-    public String getNombreEmpresa() {
-        return nombreEmpresa;
+    public Empresa(String nombre, String apellido, String telefono, String email,
+                   int numJugadores, String rangoEdad, LocalDate fechaReserva,
+                   String complejidad, boolean factura) {
+        super(nombre, apellido, telefono, email, numJugadores, rangoEdad, fechaReserva, complejidad);
+        this.factura = factura;
     }
 
-    public void setNombreEmpresa(String nombreEmpresa) {
-        this.nombreEmpresa = nombreEmpresa;
+    public boolean isFactura() {
+        return factura;
     }
 
-    public boolean isNecesitaFactura() {
-        return necesitaFactura;
-    }
-
-    public void setNecesitaFactura(boolean necesitaFactura) {
-        this.necesitaFactura = necesitaFactura;
+    public void setFactura(boolean factura) {
+        this.factura = factura;
     }
 
     @Override
     public String toString() {
-        return super.toString()+" "+ nombreEmpresa+" "+necesitaFactura;
+        return "Empresa / " + getNombre() + " " + getApellido() + " / " + getFechaReserva()
+                + " / " + getNumJugadores() + " jugadores / " + getComplejidad()
+                + " / Factura: " + (factura ? "Sí" : "No");
     }
 }

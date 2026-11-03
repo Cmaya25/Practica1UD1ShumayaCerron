@@ -3,24 +3,17 @@ package com.shumayac.scaperoom.base;
 import java.time.LocalDate;
 
 public class Cumpleanios extends Reserva {
+    private int edadCumpleaniero;
 
-    private static final double PACK_DECORACION = 20.0;
+    public Cumpleanios() {
+        super();
+    }
 
-    private String nombreCumpleaniero;
-    private  tipoPack;
-
-    public Cumpleanios(String nombreContacto, String telefono, LocalDate fechaReserva, int numJugadores, String nombreCumpleaniero, int edadCumpleaniero) {
-        super(nombreContacto, telefono, fechaReserva, numJugadores);
-        this.nombreCumpleaniero = nombreCumpleaniero;
+    public Cumpleanios(String nombre, String apellido, String telefono, String email,
+                       int numJugadores, String rangoEdad, LocalDate fechaReserva,
+                       String complejidad, int edadCumpleaniero) {
+        super(nombre, apellido, telefono, email, numJugadores, rangoEdad, fechaReserva, complejidad);
         this.edadCumpleaniero = edadCumpleaniero;
-    }
-
-    public String getNombreCumpleaniero() {
-        return nombreCumpleaniero;
-    }
-
-    public void setNombreCumpleaniero(String nombreCumpleaniero) {
-        this.nombreCumpleaniero = nombreCumpleaniero;
     }
 
     public int getEdadCumpleaniero() {
@@ -33,7 +26,8 @@ public class Cumpleanios extends Reserva {
 
     @Override
     public String toString() {
-        return super.toString()+" "+nombreCumpleaniero
-                +" "+edadCumpleaniero;
+        return "Cumpleaños / " + getNombre() + " " + getApellido() + " / " + getFechaReserva()
+                + " / " + getNumJugadores() + " jugadores / " + getComplejidad()
+                + " / Cumpleañero: " + edadCumpleaniero + " años";
     }
 }
